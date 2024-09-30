@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+
+	pid_t pid; // int
+	int i;
+
+	if ((pid=fork())>0) {
+		// Parent
+		printf("Parent process; PID of child is %d\n",pid);
+		for (i=0;i<100;i++) {
+			printf("BUM\n");
+		}
+	}
+	else {
+		// Child
+		printf("Child process; fork returned %d\n",pid);
+		for (i=0;i<100;i++) {
+			printf("BAC\n");
+		}
+
+	}
+	printf("Kapybara.\n");              
+
+}
+

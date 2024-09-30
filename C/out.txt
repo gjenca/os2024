@@ -1,0 +1,11 @@
+backups
+cache
+lib
+local
+lock
+log
+mail
+opt
+run
+spool
+tmp

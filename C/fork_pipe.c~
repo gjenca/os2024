@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <fcntl.h> 
+
+int main() {
+
+	pid_t pid; // int
+	int pipefd[2];
+	int status;
+	static char buf[100];
+
+	pipe(pipefd);
+	if ((pid=fork())>0) {
+		// Parent
+		printf("Parent process; PID of child is %d\n",pid);
+		read(4,buf);
+		wait(&status);
+		printf("status:%d\n",WEXITSTATUS(status));
+		printf("bum je %s",buf);
+	}
+	else {
+		// Child
+		printf("Child process; fork returned %d\n",pid);
+		write(pipefd[1],"BUM\n",4);
+		exit(7);
+
+	}
+	printf("Kapybara.\n");              
+
+}
+
