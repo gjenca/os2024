@@ -6,7 +6,7 @@ do
 	JEPRVOCISLO="ano"
 	for D in $(seq 2 "$POLOVICA")
 	do
-		if test $(echo "$K%$D" | bc) = 0
+		if [ $(echo "$K%$D" | bc) = 0 ]
 		then
 			# echo "$K" nie je prvocislo
 			JEPRVOCISLO="nie"
