@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 N=100
+if test "$#" = 1
+then
+	N="$1"
+fi
 for K in $(seq 2 "$N")
 do
 	POLOVICA=$(echo "$K/2" | bc)

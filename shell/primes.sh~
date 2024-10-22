@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-N=100
+N="$1"
 for K in $(seq 2 "$N")
 do
 	POLOVICA=$(echo "$K/2" | bc)
@@ -15,7 +15,7 @@ do
 	done
 	if test "$JEPRVOCISLO" = "ano"
 	then
-		echo "$D" je prvocislo
+		echo "$K" je prvocislo
 	fi
 done
 
