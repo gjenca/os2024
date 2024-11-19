@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import sys
 
-n = 967
+n = int(sys.argv[1])
+
 while n!=1:
     print(n)
     if n % 2 == 0:
